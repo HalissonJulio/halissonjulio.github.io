@@ -1,0 +1,95 @@
+
+.maindiv {
+	height: 1950px;
+	background-attachment:hover;
+    background-repeat:no-repeat;
+    background-color:#FFFFFF;
+	background-size: cover;
+}
+
+h2 {
+	
+	color: #000000;
+	font-size: 2em;
+	text-align: center;
+}
+
+a{
+	font-family:Arial;
+	font-size:20px;
+	text-transform:uppercase;
+	font-weight:700;
+	border:none;
+	padding:10px;
+	cursor:pointer;
+	display:inline-block;
+	text-decoration:none;
+	text-align: center;
+}
+a{
+	background-color:#00B2EE;
+	color:000;
+	box-shadow:0 5px 0 #009ACD;
+	text-align: center;
+}
+a:hover{
+	background-color:#009ACD;
+	color:000;
+	box-shadow:0 5px 0 #00688B;
+}
+a:active{
+	position:relative;
+	top:5px;
+	box-shadow:none;
+	
+}
+
+h1 {
+	color: #000000;
+	text-align: center;
+	font-family: sans-serif;
+	font-weight: bold;
+}
+
+h2:after, h2:before {
+	content: '';
+	display: block;
+	width: 80px;
+	height: 3px;
+	background: #6d2db0;
+	margin: 0 auto;
+	text-align: center;
+}
+
+h3 {
+	color: #000000;
+	text-align: center;
+	font-family: sans-serif;
+	font-weight: bold;
+}
+
+ol {
+	text-align: center;
+	list-style: block;
+	list-style-position: inside;
+}
+
+li {
+	font-family: sans-serif;
+	text-align: center;
+}
+
+p {
+	color: #000000;
+	font-family: sans-serif;
+	text-align: center;
+}
+
+hr {
+	border: 1px solid;
+}
+
+a {
+	color:#000000;
+}
+
