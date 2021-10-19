@@ -14,6 +14,19 @@ window.onload = function() {
 
     })
 
+    const paragrafos = document.querySelectorAll("p")
+    paragrafos.forEach(paragrafo => {
+
+        const h3 = document.createElement("h3")
+        const retorno = document.createElement("a")
+
+        retorno.textContent = "Clique aqui para voltar à lista"
+        h3.appendChild(retorno)
+
+        paragrafo.parentElement.insertBefore(h3, paragrafo.nextSibling)
+    })
+
+
     const links = document.querySelectorAll("a")
     links.forEach(link => {
         link.onclick = function() {
