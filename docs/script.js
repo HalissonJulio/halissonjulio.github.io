@@ -1,17 +1,35 @@
 window.onload = function() {
 
-	const Elementos = document.querySelectorAll("h2");
-	const Lista = document.querySelector("ol")
+	const elementos = document.querySelectorAll("h2");
+	const lista = document.querySelector("ol")
 
-	Elementos.forEach(Elemento => {
+	elementos.forEach(elemento => {
 		
-		const ListaLI = document.createElement("li");
-		const Link = document.createElement("a");
+		const listaLi = document.createElement("li");
+		const link = document.createElement("a");
 
-		Link.href = `#${Elemento.id}`
-		Link.textContent = Elemento.textContent
-		ListaLI.appendChild(Link)
-		Lista.append(ListaLI)
+		link.textContent = elemento.textContent
+		listaLi.appendChild(link)
+		lista.append(listaLi)
+
+		link.onclick = function() {
+			let destino;
+			for (i = 0; i < elementos.length; i++) {
+				if (elementos[i].textContent == link.textContent) {
+					destino = elementos[i]
+					break
+				}
+			}
+			destino.scrollIntoView()
+		}
 
 	})
+
+	const voltarLista = document.getElementsByClassName("backlist")
+	for (const button of voltarLista) {
+		button.onclick = function() {
+			document.getElementById("lista").scrollIntoView()
+		}
+	}
+
 }
