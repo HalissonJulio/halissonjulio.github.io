@@ -1,6 +1,7 @@
 window.onload = function() {
 
 	const elementos = document.querySelectorAll("h2");
+	console.log(elementos)
 	const lista = document.querySelector("ol")
 
 	elementos.forEach(elemento => {
@@ -19,6 +20,7 @@ window.onload = function() {
 		h3.appendChild(retorno)
 
 		elemento.parentElement.insertBefore(h3, elemento.nextSibling)
+		
 	})
 
 	const links = document.querySelectorAll("a")
@@ -38,4 +40,6 @@ window.onload = function() {
 			}
 		}
 	})
+
+	
 }
