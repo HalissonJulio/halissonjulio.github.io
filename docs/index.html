@@ -1,14 +1,54 @@
+
 <!DOCTYPE html>
 <html>
 <head>
-	<meta charset="UTF-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>DDD</title>
-	<link rel="stylesheet" type="text/css" href="styles.css"/>
+	<style type="text/css">
+		.content {
+			max-width: 400px;
+			max-height: 600px;
+			margin: auto;
+			background: #f3f3f3;
+			height: 450px;
+			padding: 2%;
+			border: 1px solid;
+		}
+
+		.content h1 {
+			text-align: center;
+
+		}
+
+		input[type=number] {
+			width: 98%;
+			height: 30px;
+			margin-bottom: 10px;
+			-moz-appearance: textfield;
+		}
+
+		ul {
+			list-style-type: none;
+			padding: 10px;
+			height: 250px;
+			background: #fff;
+			overflow-y: auto;
+		}
+
+		li {
+			height: 40px;
+			margin: 15px 0 15px 0;
+			border-bottom: 1px solid;
+		}
+
+		input::-webkit-outer-spin-button,
+		input::-webkit-inner-spin-button {
+			-webkit-appearance: none;
+			margin: 0;
+		}
+
+	</style>
 </head>
+
 <body>
-	<script src="script.js"></script>
 	<div class='content'>
 		<div class="row">
 			<div class="col-12">
@@ -26,5 +66,36 @@
 			</div>
 		</div>
 	</div>
+	<script type="text/javascript">
+		const ul = document.getElementById("cityList");
+		const input = document.getElementById('ddd');
+
+		input.addEventListener("input", buscaDadosApi);
+		function buscaDadosApi(evento) {
+			fetch(`https://brasilapi.com.br/api/ddd/v1/${evento.target.value}`)
+				.then(resposta => resposta.json())
+				.then(preencheLista)
+				.catch(requestError);
+		}
+
+		function requestError({ message }) {
+			ul.replaceChildren(createItemEl(message));
+		}
+
+		function preencheLista(dados) {
+			if (dados.cities) {
+				const items = dados.cities.map(createItemEl);
+				if (items.length) return ul.replaceChildren(...items);
+			}
+
+			requestError(dados)
+		}
+
+		function createItemEl(itemValue) {
+			const li = document.createElement("li");
+			li.innerText = itemValue;
+			return li;
+		}
+	</script>
 </body>
 </html>
