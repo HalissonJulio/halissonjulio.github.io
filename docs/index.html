@@ -1,12 +1,30 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
+	<meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Damas</title>
+    <title>DDD</title>
+    <link rel="stylesheet" type="text/css" href="style.css" />
 </head>
 <body>
-    <script src="script.js"></script>
+	<div class='content'>
+		<div class="row">
+			<div class="col-12">
+				<h1> DDDs do Brasil </h1>
+				<input type="number" min="0" id='ddd' placeholder="Insira o DDD"/>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-12">
+				<div class="to-do-list-box">
+					<label>Lista de cidades:</label>
+					<ul id="cityList">
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+	<script src="script.js"></script>
 </body>
 </html>
